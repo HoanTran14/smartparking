@@ -5,8 +5,10 @@ var router = express.Router();
 router.use(bodyParsers.json());
 router.use(bodyParsers.urlencoded({extended: true}));
 //-----------------------------------------------------------------------------------------------------------
+
 const DATABASE = require('../modules/database');
 const OPENALPR = require('../modules/openalpr');
+
 var data = DATABASE();
 var openalr = OPENALPR();
 
@@ -20,7 +22,7 @@ router.get('/', function (req, res, next) {
 
 });
 //delete table
-router.post("/tabledel", function (req, res, next) {
+router.post("/table/del", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
     //data.getDatabase().dropDatabase();

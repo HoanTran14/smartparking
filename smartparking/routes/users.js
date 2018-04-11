@@ -12,23 +12,13 @@ var data = DATABASE();
 router.get('/', function (req, res, next) {
 	res.send('respond with a resource');
 });
-router.post('/login', function (req, res, next) {
-	if (!req.body) return res.sendStatus(400);
-	console.log(req.body);
-
-
-});
-
-router.post("/userdetail", function (req, res, next) {
+router.post("/detail", function (req, res, next) {
 	if (!req.body) return res.sendStatus(400);
 	console.log(req.body);
 	res.send({code: 0, mes: "Fail to get data!", data: {}});
 
 
 });
-
-
-
 router.post("/search", function (req, res, next) {
 	if (!req.body) return res.sendStatus(400);
 	console.log(req.body);
@@ -37,7 +27,7 @@ router.post("/search", function (req, res, next) {
 	data.userTable().findAll({
 
 		where: {
-			name: {
+			phone: {
 				[(data.Ops()).like]: name
 			}
 		}
@@ -55,7 +45,7 @@ router.post("/delete", function (req, res, next) {
 
 	data.userTable().destroy({
 		where: {
-			idfb: req.body.idfb
+			id: req.body.id
 		}
 
 	}).then(a => {
@@ -66,8 +56,5 @@ router.post("/delete", function (req, res, next) {
 			res.send({code: 1, mes: "Success!", data: {}});
 
 	}).catch(a => res.send({code: 0, mes: "Fail!", data: {}}));
-
-//TODO
-
 });
 module.exports = router;

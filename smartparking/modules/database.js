@@ -27,11 +27,7 @@ db.authenticate()
 	.catch(err => console.log("CONECTDATA FAIL: ", err.message));
 
 const usertable = require('./models/User')(db, sequeliz);
-
-
-
 db.sync();
-
 ////-----------------------coment----------------------------------------------------------------------------------------------------------------
 function Sequelize() {
 	const KEY = "dsadas";
@@ -51,9 +47,6 @@ function Sequelize() {
 	}
 
 
-
-
-
 	function getDatabase() {
 		return db;
 	}
@@ -71,7 +64,7 @@ function Sequelize() {
 	function findUserbyFbid(id, next, error) {
 		console.log("BYID", id)
 		usertable.findOne({
-			where: {idfb: id}}).then(user => {
+			where: {id: id}}).then(user => {
 				if (user == null) {
 					error("Fail!");
 
@@ -89,8 +82,6 @@ function Sequelize() {
 	}
 
 	return {
-
-        getDatabase,
 		Ops,
 		userTable,
 		createUser,
