@@ -7,17 +7,17 @@ router.use(bodyParsers.urlencoded({extended: true}));
 //-----------------------------------------------------------------------------------------------------------
 
 const DATABASE = require('../modules/database');
-const OPENALPR = require('../modules/openalpr');
+//const OPENALPR = require('../modules/openalpr');
 
 var data = DATABASE();
-var openalr = OPENALPR();
+//var openalr = OPENALPR();
 
 //--------------------------------------------------------------------------------------------------------------
 /* GET home page. */
 router.get('/', function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
-    openalr.identify(1,"http://thamtutatthang.com/uploads/images/tham-tu-dieu-tra-bien-so-xe(1).jpg")
+  //  openalr.identify(1,"http://thamtutatthang.com/uploads/images/tham-tu-dieu-tra-bien-so-xe(1).jpg")
     res.send({code: 1, mes: "Success ", data: {}});
 
 });
