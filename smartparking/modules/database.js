@@ -65,10 +65,13 @@ function Sequelize() {
 
 
 
-	function findUserbyFbid(id, next, error) {
-		console.log("BYID", id)
+	function loginUser(body, next, error) {
+		console.log("BYID", body)
 		usertable.findOne({
-			where: {id: id}}).then(user => {
+			where: {
+				phone: body.phone,
+                password: body.password
+			}}).then(user => {
 				if (user == null) {
 					error("Fail!");
 
@@ -89,7 +92,7 @@ function Sequelize() {
 		Ops,
 		userTable,
 		createUser,
-		findUserbyFbid,
+        loginUser,
 		KEY
 
 	};

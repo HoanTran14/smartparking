@@ -10,5 +10,6 @@ module.exports = function(dbConn, sequeliz) {
 		password: sequeliz.STRING,
         license_plates_top:sequeliz.STRING,
         license_plates_bottom:sequeliz.STRING
+
 	});
 }

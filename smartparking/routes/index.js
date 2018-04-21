@@ -34,16 +34,13 @@ router.post("/table/del", function (req, res, next) {
 router.post("/login", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
-    data.findUserbyFbid(req.body.id.toString(),
+    data.loginUser(req.body,
         function (user) {
-            res.send({code: 1, mes: "Success find", data: {user}});
+
+            res.send({code: 1, mes: "Success", data: {user}});
 
         }, function () {
-            data.createUser(req.body.id.toString, function () {
-                res.send({code: 1, mes: "Success create", data: {}});
-            }, function () {
                 res.send({code: 0, mes: "Fail to login!", data: {}});
-            })
 
         });
 
