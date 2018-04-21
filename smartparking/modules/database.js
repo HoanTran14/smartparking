@@ -32,17 +32,21 @@ db.sync();
 function Sequelize() {
 	const KEY = "dsadas";
 
-	function createUser(id, next, errs) {
-
+	function createUser(body, next, errs) {
+        console.log("CREAT USER  FAIL: ", body),
 		usertable.create({
-			idfb: id
+			phone: body.phone,
+            name: body.name,
+            password: body.password,
+            license_plates_top: body.license_plates_top,
+            license_plates_bottom:body.license_plates_bottom
 		}).then(user => {
 				console.log("CREAT USER : ", user.get({plain: true}));
 				next(user);
 			})
 			.catch(err => {
 				console.log("CREAT USER  FAIL: ", err.message),
-					errs();
+					errs(err.message);
 			});
 	}
 

@@ -1,12 +1,14 @@
 module.exports = function(dbConn, sequeliz) {
 	return dbConn.define('user', {
-		id: {
+        phone: {
 			type: sequeliz.STRING,
 			allowNull: false,
 			primaryKey: true
 
 		},
-		phone: sequeliz.STRING,
-		name: sequeliz.STRING
+		name: sequeliz.STRING,
+		password: sequeliz.STRING,
+        license_plates_top:sequeliz.STRING,
+        license_plates_bottom:sequeliz.STRING
 	});
 }
