@@ -9,7 +9,8 @@ module.exports = function(dbConn, sequeliz) {
 		name: sequeliz.STRING,
 		password: sequeliz.STRING,
         license_plates_top:sequeliz.STRING,
-        license_plates_bottom:sequeliz.STRING
+        license_plates_bottom:sequeliz.STRING,
+        wallet: sequeliz.BIGINT
 
-	});
+    });
 }

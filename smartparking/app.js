@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var park = require('./routes/park');
 
 var port = 5678;
 var app = express();
@@ -28,12 +29,13 @@ app.use(function (req, res, next) {
 });
 app.use('/', index);
 app.use('/users', users);
+app.use('/park', park);
 
 //body parser---------------------------------------------------------------------------------------------------------------
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 const DATABASE = require('./modules/database');
-//FACEAPI---------------------------------------------------------------------------------------------------------------
+
 console.log("START APP.JS");
 
 app.listen(process.env.PORT || port, function(){

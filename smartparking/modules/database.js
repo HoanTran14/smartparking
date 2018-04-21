@@ -37,6 +37,7 @@ function Sequelize() {
 		usertable.create({
 			phone: body.phone,
             name: body.name,
+            wallet:0,
             password: body.password,
             license_plates_top: body.license_plates_top,
             license_plates_bottom:body.license_plates_bottom
