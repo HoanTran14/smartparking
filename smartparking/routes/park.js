@@ -13,7 +13,7 @@ var data = DATABASE();
 
 
 
-//delete table
+
 router.post("/info", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
@@ -21,12 +21,17 @@ router.post("/info", function (req, res, next) {
 
 });
 
-//login
+
 router.post("/register", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
-    fire.writeUserData(req.body.id,req.body.username,  req.body.email,null)
+    fire.writeParkDataInfo(req.body)
 
 });
+router.post("/update", function (req, res, next) {
+    if (!req.body) return res.sendStatus(400);
+    console.log(req.body);
+    fire.writeUpdatePark(req.body);
 
+});
 module.exports = router;

@@ -1,9 +1,15 @@
 module.exports = function(dbConn, sequeliz) {
 	return dbConn.define('user', {
+        id: {
+            type: sequeliz.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true
+
+        },
         phone: {
 			type: sequeliz.STRING,
-			allowNull: false,
-			primaryKey: true
+			allowNull: false
 
 		},
 		name: sequeliz.STRING,

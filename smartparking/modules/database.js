@@ -27,10 +27,13 @@ db.authenticate()
 	.catch(err => console.log("CONECTDATA FAIL: ", err.message));
 
 const usertable = require('./models/User')(db, sequeliz);
+const parktable = require('./models/Park')(db, sequeliz);
+const hisparktable = require('./models/HistoryPark')(db, sequeliz);
+const hisusertable = require('./models/HistoryUser')(db, sequeliz);
 db.sync();
 ////-----------------------coment----------------------------------------------------------------------------------------------------------------
 function Sequelize() {
-	const KEY = "dsadas";
+
 
 	function createUser(body, next, errs) {
         console.log("CREAT USER  FAIL: ", body),
@@ -59,6 +62,16 @@ function Sequelize() {
 	function userTable() {
 		return usertable;
 	}
+    function parkTable() {
+        return parkTable();
+    }
+    function hisparkTable() {
+        return userTable();
+    }
+    function hisuserTable() {
+        return hisparkTable();
+    }
+
 
 	function Ops() {
 		return Op;
@@ -92,9 +105,11 @@ function Sequelize() {
 	return {
 		Ops,
 		userTable,
+		parkTable,
+		hisparkTable,
+		hisuserTable,
 		createUser,
-        loginUser,
-		KEY
+        loginUser
 
 	};
 
