@@ -102,7 +102,29 @@ function Sequelize() {
 			});
 	}
 
+    function finduserbyphone(phone, next, error) {
+        console.log("BYID", body)
+        usertable.findOne({
+            where: {
+                phone: phone
+            }}).then(user => {
+            if (user == null) {
+                error("Fail!");
+
+            }
+            else {
+                console.log("LOGIN: ");
+                next(user);
+            }
+
+        })
+            .catch(err => {
+                console.log("findOne FAIL: ", err.message);
+                error();
+            });
+    }
 	return {
+        finduserbyphone,
 		Ops,
 		userTable,
 		parkTable,

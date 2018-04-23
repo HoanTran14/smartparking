@@ -19,10 +19,19 @@ router.post("/register", function (req, res, next) {
     })
 
 });
-router.post("/detail", function (req, res, next) {
+router.post("/info", function (req, res, next) {
 	if (!req.body) return res.sendStatus(400);
 	console.log(req.body);
-	res.send({code: 0, mes: "Fail to get data!", data: {}});
+    data.finduserbyphone(req.body.phone,
+        function (user) {
+
+            res.send({code: 1, mes: "Success", data: {user}});
+
+        }, function () {
+            res.send({code: 0, mes: "Fail to login!", data: {}});
+
+        });
+
 
 
 });
