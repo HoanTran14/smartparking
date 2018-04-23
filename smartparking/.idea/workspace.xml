@@ -17,8 +17,8 @@
       <file leaf-file-name="firebasedatabase.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+            <state relative-caret-position="510">
+              <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -79,7 +79,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="362" />
     <option name="y" value="58" />
     <option name="width" value="853" />
@@ -188,7 +188,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28589000" />
+    <option name="totallyTimeSpent" value="29319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -625,8 +625,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+        <state relative-caret-position="510">
+          <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -28,6 +28,7 @@ function firebase() {
             price: body.price,
             capacity: body.capacity,
             used:0,
+            space:0,
         });
     }
 
