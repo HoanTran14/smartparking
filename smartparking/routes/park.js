@@ -28,10 +28,17 @@ router.post("/register", function (req, res, next) {
     fire.writeParkDataInfo(req.body)
 
 });
-router.post("/update", function (req, res, next) {
+router.post("/sign", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
-    fire.writeUpdatePark(req.body);
+    fire.signPark(req.body);
+
+});router.post("/tesy", function (req, res, next) {
+    if (!req.body) return res.sendStatus(400);
+    console.log(req.body);
+
+
 
 });
+
 module.exports = router;

@@ -18,7 +18,7 @@ const database = firebasedatabase.database();
 function firebase() {
     function writeParkDataInfo(body) {
 
-        database.ref('park/' + body.id).set({
+        database.ref('park/' + body.id).update({
             id: body.id,
             name: body.name,
             address: body.address,
@@ -27,20 +27,38 @@ function firebase() {
             profile_picture: body.img,
             price: body.price,
             capacity: body.capacity,
-            used:0,
-            space:0,
+            used: 0,
+            space: 0,
         });
     }
 
-    function writeUpdatePark(body) {
-        console.log("FIRE"+body);
-        database.ref("park/" + body.id).update({list_license: body.license});
+    function signPark(body) {
+        console.log("FIRE" + body);
+        database.ref("ticket/" + body.id + "/" + body.id_user).update({list_license: body.license});
 
     }
+    function updatePark(body) {
+        console.log("FIRE" + body);
+        database.ref('park/' + body.id).update({
+            capacity: body.capacity,
+            used: body.used,
+            space: body.space
+        });
 
+    }
+    function updatePark(body) {
+        console.log("FIRE" + body);
+        database.ref('park/' + body.id).update({
+            capacity: body.capacity,
+            used: body.used,
+            space: body.space
+        });
+
+    }
     return {
+        updatePark,
         writeParkDataInfo,
-        writeUpdatePark
+        signPark
     };
 
 }
