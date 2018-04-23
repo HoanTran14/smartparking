@@ -3,13 +3,13 @@ module.exports = function(dbConn, sequeliz) {
         id: {
             type: sequeliz.INTEGER,
             allowNull: false,
-            autoIncrement: true,
-            primaryKey: true
+            autoIncrement: true
 
         },
         phone: {
 			type: sequeliz.STRING,
-			allowNull: false
+			allowNull: false,
+            primaryKey: true
 
 		},
 		name: sequeliz.STRING,

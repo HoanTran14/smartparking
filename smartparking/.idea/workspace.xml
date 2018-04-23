@@ -17,26 +17,56 @@
       <file leaf-file-name="firebasedatabase.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+            <state relative-caret-position="327">
+              <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="openalpr.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/openalpr.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="park.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="park.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/park.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+            <state relative-caret-position="256">
+              <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="openalpr.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/openalpr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="7" column="153" lean-forward="true" selection-start-line="7" selection-start-column="153" selection-end-line="7" selection-end-column="153" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/database.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="135" column="6" lean-forward="true" selection-start-line="125" selection-start-column="4" selection-end-line="135" selection-end-column="6" />
+              <folding>
+                <element signature="e#118#678#0" />
+                <element signature="n#!!block;n#createUser#0;n#!!block;n#Sequelize#0" />
+                <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
+                <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
+                <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
+                <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
+                <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
+                <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
+                <element signature="n#!!block;n#loginUser#0;n#!!block;n#Sequelize#0" />
+                <element signature="n#!!block;n#finduserbyphone#0;n#!!block;n#Sequelize#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,8 +88,6 @@
         <option value="$PROJECT_DIR$/modules/firebase.js" />
         <option value="$PROJECT_DIR$/modules/firebase_database.js" />
         <option value="$PROJECT_DIR$/routes/parkinglot.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/modules/models/User.js" />
         <option value="$PROJECT_DIR$/modules/models/History.js" />
         <option value="$PROJECT_DIR$/modules/models/HistoryPark.js" />
         <option value="$PROJECT_DIR$/modules/models/Park.js" />
@@ -67,8 +95,11 @@
         <option value="$PROJECT_DIR$/modules/database.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/modules/firebasedatabase.js" />
-        <option value="$PROJECT_DIR$/modules/openalpr.js" />
+        <option value="$PROJECT_DIR$/modules/models/User.js" />
+        <option value="$PROJECT_DIR$/modules/models/Ticket.js" />
+        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/park.js" />
+        <option value="$PROJECT_DIR$/modules/openalpr.js" />
       </list>
     </option>
   </component>
@@ -111,17 +142,6 @@
               <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
               <item name="smartparking" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartparking" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartparking" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
@@ -193,12 +213,12 @@
       <workItem from="1523340244149" duration="4303000" />
       <workItem from="1524297138664" duration="154000" />
       <workItem from="1524297517007" duration="10002000" />
-      <workItem from="1524465865871" duration="5460000" />
+      <workItem from="1524465865871" duration="9868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34779000" />
+    <option name="totallyTimeSpent" value="39187000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -240,13 +260,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/database.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -532,13 +545,6 @@
         <state relative-caret-position="-765" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/models/HistoryPark.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -553,36 +559,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/models/Park.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/models/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="45" selection-start-line="36" selection-start-column="3" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="126" column="24" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
-          <folding>
-            <element signature="e#118#678#0" />
-            <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -593,31 +573,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
+    <entry file="file://$PROJECT_DIR$/modules/models/Ticket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/openalpr.js">
+    <entry file="file://$PROJECT_DIR$/modules/models/User.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="85">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/models/Park.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+          <folding>
+            <element signature="e#477#1089#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="135" column="6" lean-forward="true" selection-start-line="125" selection-start-column="4" selection-end-line="135" selection-end-column="6" />
+          <folding>
+            <element signature="e#118#678#0" />
+            <element signature="n#!!block;n#createUser#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#loginUser#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#finduserbyphone#0;n#!!block;n#Sequelize#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
-          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="48" />
+          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/park.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+        <state relative-caret-position="256">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/openalpr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="153" lean-forward="true" selection-start-line="7" selection-start-column="153" selection-end-line="7" selection-end-column="153" />
         </state>
       </provider>
     </entry>
