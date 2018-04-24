@@ -35,6 +35,22 @@ router.post("/info", function (req, res, next) {
 
 
 });
+router.post("/wallet/recharge", function (req, res, next) {
+    if (!req.body) return res.sendStatus(400);
+    console.log(req.body);
+    data.recharge(req.body,
+        function (user) {
+
+            res.send({code: 1, mes: "Success", data: {user}});
+
+        }, function () {
+            res.send({code: 0, mes: "Fail to login!", data: {}});
+
+        });
+
+
+
+});
 router.post("/search", function (req, res, next) {
 	if (!req.body) return res.sendStatus(400);
 	console.log(req.body);
