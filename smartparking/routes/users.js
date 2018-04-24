@@ -12,16 +12,16 @@ var data = DATABASE();
 router.post("/register", function (req, res, next) {
     if (!req.body) returnres.sendStatus(400);
 
-    data.createUser(req.body,function (user) {
+    data.createUser(req.body, function (user) {
         res.send({code: 1, mes: "Success", data: {user}});
-    },function (err) {
+    }, function (err) {
         res.send({code: 1, mes: err, data: {}});
     })
 
 });
 router.post("/info", function (req, res, next) {
-	if (!req.body) return res.sendStatus(400);
-	console.log(req.body);
+    if (!req.body) return res.sendStatus(400);
+    console.log(req.body);
     data.finduserbyphone(req.body.phone,
         function (user) {
 
@@ -33,8 +33,8 @@ router.post("/info", function (req, res, next) {
         });
 
 
-
 });
+
 router.post("/wallet/recharge", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
@@ -49,44 +49,58 @@ router.post("/wallet/recharge", function (req, res, next) {
         });
 
 
+});
+router.post("/wallet", function (req, res, next) {
+    if (!req.body) return res.sendStatus(400);
+    console.log(req.body);
+    data.finduserbyphone(req.body.phone,
+        function (user) {
+            var wallet = user.get("wallet");
+            res.send({code: 1, mes: "Success", data: {wallet}});
+
+        }, function () {
+            res.send({code: 0, mes: "Fail!", data: {}});
+
+        });
+
 
 });
 router.post("/search", function (req, res, next) {
-	if (!req.body) return res.sendStatus(400);
-	console.log(req.body);
-	var name = '%' + req.body.key + '%';
-	console.log("SEARCH", name);
-	data.userTable().findAll({
+    if (!req.body) return res.sendStatus(400);
+    console.log(req.body);
+    var name = '%' + req.body.key + '%';
+    console.log("SEARCH", name);
+    data.userTable().findAll({
 
-		where: {
-			phone: {
-				[(data.Ops()).like]: name
-			}
-		}
-	}).then(arr => res.send({code: 1, mes: "Success", data: {list: arr}}))
-		.catch(err => {
+        where: {
+            phone: {
+                [(data.Ops()).like]: name
+            }
+        }
+    }).then(arr => res.send({code: 1, mes: "Success", data: {list: arr}}))
+        .catch(err => {
 
-			res.send({code: 0, mes: "Fail to get data!", data: err.message});
-		})
+            res.send({code: 0, mes: "Fail to get data!", data: err.message});
+        })
 //TODO
 
 });
 router.post("/delete", function (req, res, next) {
-	if (!req.body) return res.sendStatus(400);
-	console.log(req.body);
+    if (!req.body) return res.sendStatus(400);
+    console.log(req.body);
 
-	data.userTable().destroy({
-		where: {
-			id: req.body.id
-		}
+    data.userTable().destroy({
+        where: {
+            id: req.body.id
+        }
 
-	}).then(a => {
+    }).then(a => {
 
-		if (a == 0) {
-			res.send({code: 0, mes: "Fail!", data: {}})
-		} else
-			res.send({code: 1, mes: "Success!", data: {}});
+        if (a == 0) {
+            res.send({code: 0, mes: "Fail!", data: {}})
+        } else
+            res.send({code: 1, mes: "Success!", data: {}});
 
-	}).catch(a => res.send({code: 0, mes: "Fail!", data: {}}));
+    }).catch(a => res.send({code: 0, mes: "Fail!", data: {}}));
 });
 module.exports = router;

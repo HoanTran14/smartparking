@@ -113,9 +113,7 @@ function Sequelize() {
 				}
 				else {
 					console.log("rechange: "+user.get("wallet"));
-                    var x = parseInt("1000", 10);
-                    x=x+3;
-					console.log("rechange: "+x);
+
                     usertable.update(
                         { wallet:( parseInt(user.get("wallet"))+parseInt(body.money)) },
                         { where: { phone: body.phone } }
@@ -137,9 +135,43 @@ function Sequelize() {
 				error();
 			});
 	}
-
-    function finduserbyphone(phone, next, error) {
+    function unrecharge(phone,money, next, error) {
         console.log("BYID", body)
+        usertable.findOne({
+            where: {
+                phone: phone
+            }}).then(user => {
+            if (user == null) {
+                error("Fail!");
+
+            }
+            else {
+                console.log("rechange: "+user.get("wallet"));
+
+                console.log("rechange: "+x);
+                usertable.update(
+                    { wallet:( parseInt(user.get("wallet"))-parseInt(money)) },
+                    { where: { phone: body.phone } }
+                )
+                    .then(result =>
+                        next(result)
+                    )
+                    .catch(err =>
+                        error(err.message)
+                    )
+
+
+
+            }
+
+        })
+            .catch(err => {
+                console.log("findOne FAIL: ", err.message);
+                error();
+            });
+    }
+    function finduserbyphone(phone, next, error) {
+
         usertable.findOne({
             where: {
                 phone: phone
