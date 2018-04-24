@@ -27,29 +27,18 @@ function firebase() {
             profile_picture: body.img,
             price: body.price,
             capacity: body.capacity,
-            used: 0,
-            space: 0,
+            used: 0
+
         });
     }
 
     function captureImage(body) {
 
-        database.ref('camera' + body.id).update({
-
-        });
+        database.ref('camera' + body.id).update({});
     }
+
     function getUrlImg(id, next, err) {
         database.ref('camera/' + id).once('value', function (snapshot) {
-
-                //logs everything that is under /user
-                console.log(snapshot.val());
-                next(snapshot.val())
-
-
-        });
-    }
-    function getParkInfo(id, next, err) {
-        database.ref('park/' + id).once('value', function (snapshot) {
 
             //logs everything that is under /user
             console.log(snapshot.val());
@@ -58,12 +47,26 @@ function firebase() {
 
         });
     }
+
+    function getParkInfo(id, next, err) {
+        database.ref('park/' + id).once('value', function (snapshot) {
+            if (snapshot.val() == null) {
+                err();
+            } else {
+                next(snapshot.val())
+            }
+            //logs everything that is under /user
+            console.log(snapshot.val());
+
+
+        });
+    }
+
     function signPark(body) {
         console.log("FIRE" + body);
         database.ref("ticket/" + body.id + "/" + body.id_user).update({list_license: body.license});
 
     }
-
 
 
     function updatePark(body) {

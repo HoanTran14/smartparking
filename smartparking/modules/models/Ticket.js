@@ -8,11 +8,12 @@ module.exports = function(dbConn, sequeliz) {
 
         },
         id_user: sequeliz.STRING,
-        id_park:sequeliz.STRING,
+        id_park:sequeliz.INTEGER,
         start_at:sequeliz.STRING,
         end_at:sequeliz.STRING,
         price:sequeliz.BIGINT,
-        desc:sequeliz.BIGINT
+        plate:sequeliz.STRING,
+        desc:sequeliz.STRING
 
     });
 }
