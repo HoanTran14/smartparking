@@ -81,38 +81,35 @@ function Sequelize() {
             {
                 end_at: body.end_at,
                 price: body.time * body.price,
-                dest:body.desc
+                dest: body.desc
             },
             {where: {id: body.id}}
         )
-            .then(result =>{
-
-                tickettable.findOne({
-                    where: {
-                        id: body.id
-
-                    }
-                }).then(ticket => {
-                    if (ticket == null) {
-                        error("Fail!");
-
-                    }
-                    else {
-                        console.log("ticket: ");
-                        next(ticket);
-                    }
-
-                })
-                    .catch(err => {
-                        console.log("findOne FAIL: ", err.message);
-                        error();
-                    });
-
-
+            .then(result => {
+                    next(result);
+                    // tickettable.findOne({
+                    //     where: {
+                    //         id: body.id
+                    //
+                    //     }
+                    // }).then(ticket => {
+                    //     if (ticket == null) {
+                    //         error("Fail!");
+                    //
+                    //     }
+                    //     else {
+                    //         console.log("ticket: ");
+                    //         next(ticket);
+                    //     }
+                    //
+                    // })
+                    //     .catch(err => {
+                    //         console.log("findOne FAIL: ", err.message);
+                    //         error();
+                    //     });
 
 
                 }
-
             )
             .catch(err =>
                 error(err.message)

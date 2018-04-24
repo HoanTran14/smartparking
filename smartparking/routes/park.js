@@ -50,8 +50,8 @@ router.post("/sign", function (req, res, next) {
         } else
             openalr.callImg(url,
                 function (data, respone) {
-                    database.createTicket(req.body,data,function (data) {
-                        res.send({code: 1, mes: "Success", data});
+                    database.createTicket(req.body,data,function (ticket) {
+                        res.send({code: 1, mes: "Success", data:{ticket}});
                     },function () {
                         res.send({code: 0, mes: "Fail", data: {}});
                     })
