@@ -32,11 +32,40 @@ function firebase() {
         });
     }
 
+    function captureImage(body) {
+
+        database.ref('camera' + body.id).update({
+
+        });
+    }
+    function getUrlImg(id, next, err) {
+        database.ref('camera/' + id).once('value', function (snapshot) {
+
+                //logs everything that is under /user
+                console.log(snapshot.val());
+                next(snapshot.val())
+
+
+        });
+    }
+    function getParkInfo(id, next, err) {
+        database.ref('park/' + id).once('value', function (snapshot) {
+
+            //logs everything that is under /user
+            console.log(snapshot.val());
+            next(snapshot.val())
+
+
+        });
+    }
     function signPark(body) {
         console.log("FIRE" + body);
         database.ref("ticket/" + body.id + "/" + body.id_user).update({list_license: body.license});
 
     }
+
+
+
     function updatePark(body) {
         console.log("FIRE" + body);
         database.ref('park/' + body.id).update({
@@ -46,16 +75,10 @@ function firebase() {
         });
 
     }
-    function updatePark(body) {
-        console.log("FIRE" + body);
-        database.ref('park/' + body.id).update({
-            capacity: body.capacity,
-            used: body.used,
-            space: body.space
-        });
 
-    }
     return {
+        getParkInfo,
+        getUrlImg,
         updatePark,
         writeParkDataInfo,
         signPark

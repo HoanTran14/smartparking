@@ -191,7 +191,29 @@ function Sequelize() {
                 error();
             });
     }
+    function findParkbyphone(id, next, error) {
+
+        parkTable().findOne({
+            where: {
+                id: id
+            }}).then(park => {
+            if (park == null) {
+                error("Fail!");
+
+            }
+            else {
+
+                next(park);
+            }
+
+        })
+            .catch(err => {
+                console.log("findOne FAIL: ", err.message);
+                error();
+            });
+    }
 	return {
+        findParkbyphone,
         recharge,
         finduserbyphone,
 		Ops,
