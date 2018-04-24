@@ -57,15 +57,17 @@ function Sequelize() {
     }
 
     function createTicket(body, plate, next, errs) {
+
         console.log("CREAT USER  FAIL: ", body),
             tickettable.create({
                 id_user: body.phone,
                 id_park: body.id,
                 start_at: body.start_at,
                 end_at: "",
-                price: 0,
+                price: body.price,
                 desc: "",
-                plate: plate
+                plate: plate,
+                money:0
             }).then(ticket => {
                 console.log("CREAT TICKET : ", ticket.get({plain: true}));
                 next(ticket);
@@ -78,6 +80,7 @@ function Sequelize() {
 
     function updateTicket(body, next, err) {
         tickettable.update(
+
             {
                 end_at: body.end_at,
                 price: body.time * body.price,

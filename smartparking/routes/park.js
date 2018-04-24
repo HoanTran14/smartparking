@@ -67,24 +67,24 @@ router.post("/sign", function (req, res, next) {
 router.post("/out", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);//id,phone,start_at
-    fire.getUrlImg(req.body.id, function (url) {
-
-        if (url == null) {
-            res.send({code: 0, mes: "Sorry, try again!", data: {}});
-        } else
-            openalr.callImg(url,
-                function (data, respone) {
-                    database.updateTicket(req.body,data,function (data) {
-                        res.send({code: 1, mes: "Success", data});
-                    },function () {
-                        res.send({code: 0, mes: "Fail", data: {}});
-                    })
-                }, function (data, respone) {
-
-                    res.send({code: 0, mes: "Fail", data: {}});
-
-                });
-    }, null);
+    // fire.getUrlImg(req.body.id, function (url) {
+    //
+    //     if (url == null) {
+    //         res.send({code: 0, mes: "Sorry, try again!", data: {}});
+    //     } else
+    //         openalr.callImg(url,
+    //             function (data, respone) {
+    //                 // database.updateTicket(req.body,data,function (data) {
+    //                 //     res.send({code: 1, mes: "Success", data});
+    //                 // },function () {
+    //                 //     res.send({code: 0, mes: "Fail", data: {}});
+    //                 // })
+    //             }, function (data, respone) {
+    //
+    //                 res.send({code: 0, mes: "Fail", data: {}});
+    //
+    //             });
+    // }, null);
 
 
 });

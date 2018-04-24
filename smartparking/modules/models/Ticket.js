@@ -12,6 +12,7 @@ module.exports = function(dbConn, sequeliz) {
         start_at:sequeliz.STRING,
         end_at:sequeliz.STRING,
         price:sequeliz.BIGINT,
+        money:sequeliz.BIGINT,
         plate:sequeliz.STRING,
         desc:sequeliz.STRING
 
