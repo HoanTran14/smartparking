@@ -17,17 +17,44 @@
       <file leaf-file-name="park.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/park.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="84" column="31" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
+            <state relative-caret-position="1350">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="firebasedatabase.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="firebasedatabase.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+            <state>
+              <caret selection-end-column="13" />
+              <folding>
+                <element signature="n#!!block;n#writeParkDataInfo#0;n#!!block;n#firebase#0" />
+                <element signature="n#!!block;n#captureImage#0;n#!!block;n#firebase#0" />
+                <element signature="n#!!block;n#getUrlImg#0;n#!!block;n#firebase#0" />
+                <element signature="n#!!block;n#upUrlImg#0;n#!!block;n#firebase#0" />
+                <element signature="n#!!block;n#getParkInfo#0;n#!!block;n#firebase#0" />
+                <element signature="n#!!block;n#signPark#0;n#!!block;n#firebase#0" />
+                <element signature="n#!!block;n#updatePark#0;n#!!block;n#firebase#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="firebaseAdmin.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/firebaseAdmin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -56,6 +83,7 @@
       <find>res</find>
       <find>find</find>
       <find>regis</find>
+      <find>regi</find>
       <find>camera</find>
     </findStrings>
   </component>
@@ -73,12 +101,13 @@
         <option value="$PROJECT_DIR$/modules/models/HistoryUser.js" />
         <option value="$PROJECT_DIR$/modules/models/User.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/modules/openalpr.js" />
         <option value="$PROJECT_DIR$/modules/models/Ticket.js" />
         <option value="$PROJECT_DIR$/modules/database.js" />
         <option value="$PROJECT_DIR$/modules/firebasedatabase.js" />
         <option value="$PROJECT_DIR$/routes/park.js" />
+        <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/modules/firebaseAdmin.js" />
       </list>
     </option>
   </component>
@@ -120,22 +149,6 @@
             <path>
               <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
               <item name="smartparking" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartparking" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartparking" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartparking" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -158,6 +171,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Code\Nodejs\smartparking\smartparking" />
       <recent name="D:\Git\smartparking\smartparking\modules\models" />
       <recent name="D:\Git\smartparking\smartparking\routes" />
       <recent name="D:\Git\smartparking\smartparking\modules" />
@@ -208,7 +222,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53765000" />
+    <option name="totallyTimeSpent" value="55813000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -223,7 +237,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22023182" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22023182" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32960895" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50052685" side_tool="true" weight="0.43093923" />
@@ -266,23 +280,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!block;n#creat#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/models/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -552,13 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/models/User.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -577,13 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="32" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -611,17 +594,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/smartparking-42276-firebase-adminsdk-zlemk-987a895177.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/park.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="84" column="31" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
+        <state relative-caret-position="1350">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+        <state>
+          <caret selection-end-column="13" />
+          <folding>
+            <element signature="n#!!block;n#writeParkDataInfo#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#captureImage#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#getUrlImg#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#upUrlImg#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#getParkInfo#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#signPark#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#updatePark#0;n#!!block;n#firebase#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/firebaseAdmin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
         </state>
       </provider>
     </entry>

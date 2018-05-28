@@ -81,6 +81,7 @@ router.post("/out", function (req, res, next) {
     console.log(req.body);
     openalr.callImg(req.body.data,
         function (data) {
+
             if (data == req.body.plate) {
                 database.updateTicket(req.body, function (data) {
                     res.send({code: 1, mes: "Success", data: {data}});
