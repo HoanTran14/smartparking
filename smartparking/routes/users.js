@@ -13,6 +13,7 @@ router.post("/register", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
 
     data.createUser(req.body, function (user) {
+        fire.updateUser(req.body.phone,-1);
         res.send({code: 1, mes: "Success", data: {user}});
     }, function (err) {
         res.send({code: 1, mes: err, data: {}});
