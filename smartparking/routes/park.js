@@ -49,8 +49,9 @@ router.post("/sign", function (req, res, next) {
         if (url == null) {
             res.send({code: 0, mes: "Sorry, try again!", data: {}});
         } else
-            fire.updateUser(req.body.phone,1);
+
             database.createTicket(req.body, url, function (ticket) {
+                fire.updateUser(req.body.phone,ticket.id);
                 res.send({code: 1, mes: "Success", data: {ticket}});
             }, function (err) {
                 res.send({code: 0, mes: "Fail", data: {err}});
@@ -109,7 +110,7 @@ router.post("/out", function (req, res, next) {
                         console.log(data);
                         database.finduserbyphone(req.body.id_user, function (data) {
                             console.log(6);
-                            fire.updateUser(req.body.id_user,0);
+                            fire.updateUser(req.body.id_user,-1);
                             fireadmin.sendmes(data.firebase_token, "Bạn vừa hoàn thành gửi xe " + req.body.plate + " , chi phi: " + req.body.price + "đ", "SmartParking !", function (data) {
 
                             }, function (err) {
