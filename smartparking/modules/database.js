@@ -61,7 +61,7 @@ function Sequelize() {
         console.log("CREAT USER  FAIL: ", body),
             tickettable.create({
                 id_user: body.phone,
-                id_park: body.id,
+                id_park: body.id_park,
                 start_at: body.start_at,
                 end_at: "",
                 price: body.price,

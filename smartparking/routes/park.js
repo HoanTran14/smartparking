@@ -43,24 +43,18 @@ router.post("/register", function (req, res, next) {
 router.post("/sign", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);//id,phone,start_at
-    fire.getUrlImg(req.body.id, function (url) {
+    openalr.callImg(req.body.data,
+        function (data) {
+            database.createTicket(req.body,data,function (ticket) {
+                res.send({code: 1, mes: "Success", data:{ticket}});
+            },function (err) {
+                res.send({code: 0, mes: "Fail", data: {err}});
+            })
+        }, function (err) {
 
-        if (url == null) {
-            res.send({code: 0, mes: "Sorry, try again!", data: {}});
-        } else
-            openalr.callImg(url,
-                function (data, respone) {
-                    database.createTicket(req.body,data,function (ticket) {
-                        res.send({code: 1, mes: "Success", data:{ticket}});
-                    },function () {
-                        res.send({code: 0, mes: "Fail", data: {}});
-                    })
-                }, function (data, respone) {
+            res.send({code: 0, mes: "Fail", data: {err}});
 
-                    res.send({code: 0, mes: "Fail", data: {}});
-
-                });
-    }, null);
+        });
 
 
 });

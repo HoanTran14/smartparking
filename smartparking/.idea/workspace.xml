@@ -17,34 +17,38 @@
       <file leaf-file-name="park.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/park.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+            <state relative-caret-position="416">
+              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="openalpr.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/openalpr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/database.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
+            <state relative-caret-position="421">
+              <caret line="66" column="21" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="21" />
               <folding>
-                <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
-                <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
-                <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
-                <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
-                <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
-                <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
+                <element signature="n#!!block;n#creat#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="firebasedatabase.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
+      <file leaf-file-name="Ticket.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/models/Ticket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+            <state relative-caret-position="238">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -81,11 +85,11 @@
         <option value="$PROJECT_DIR$/modules/models/User.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
-        <option value="$PROJECT_DIR$/modules/openalpr.js" />
         <option value="$PROJECT_DIR$/modules/firebasedatabase.js" />
-        <option value="$PROJECT_DIR$/routes/park.js" />
         <option value="$PROJECT_DIR$/modules/models/Ticket.js" />
+        <option value="$PROJECT_DIR$/routes/park.js" />
         <option value="$PROJECT_DIR$/modules/database.js" />
+        <option value="$PROJECT_DIR$/modules/openalpr.js" />
       </list>
     </option>
   </component>
@@ -116,6 +120,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,7 +153,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,7 +219,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49761000" />
+    <option name="totallyTimeSpent" value="50332000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -227,17 +231,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22023182" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32960895" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32715008" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21564245" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.43093923" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -277,14 +281,7 @@
         <state relative-caret-position="289">
           <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding>
-            <element signature="e#118#678#0" />
-            <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#loginUser#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#creat#0" />
           </folding>
         </state>
       </provider>
@@ -308,14 +305,7 @@
         <state relative-caret-position="289">
           <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding>
-            <element signature="e#118#678#0" />
-            <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#loginUser#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#creat#0" />
           </folding>
         </state>
       </provider>
@@ -346,14 +336,7 @@
         <state relative-caret-position="1224">
           <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
           <folding>
-            <element signature="e#118#678#0" />
-            <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#loginUser#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#creat#0" />
           </folding>
         </state>
       </provider>
@@ -447,14 +430,7 @@
         <state relative-caret-position="62">
           <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
           <folding>
-            <element signature="e#118#678#0" />
-            <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#loginUser#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#creat#0" />
           </folding>
         </state>
       </provider>
@@ -471,14 +447,7 @@
         <state relative-caret-position="289">
           <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding>
-            <element signature="e#118#678#0" />
-            <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#loginUser#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#creat#0" />
           </folding>
         </state>
       </provider>
@@ -502,14 +471,7 @@
         <state relative-caret-position="289">
           <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding>
-            <element signature="e#118#678#0" />
-            <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#loginUser#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#creat#0" />
           </folding>
         </state>
       </provider>
@@ -540,14 +502,7 @@
         <state relative-caret-position="1224">
           <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
           <folding>
-            <element signature="e#118#678#0" />
-            <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#loginUser#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#creat#0" />
           </folding>
         </state>
       </provider>
@@ -635,13 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/openalpr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -656,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/park.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/models/Ticket.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -672,16 +613,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/database.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
+        <state relative-caret-position="421">
+          <caret line="66" column="21" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="21" />
           <folding>
-            <element signature="n#!!block;n#getDatabase#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#userTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#parkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisparkTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#hisuserTable#0;n#!!block;n#Sequelize#0" />
-            <element signature="n#!!block;n#Ops#0;n#!!block;n#Sequelize#0" />
+            <element signature="n#!!block;n#creat#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/park.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/openalpr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>

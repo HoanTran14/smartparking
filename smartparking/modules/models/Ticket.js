@@ -14,7 +14,8 @@ module.exports = function(dbConn, sequeliz) {
         price:sequeliz.BIGINT,
         money:sequeliz.BIGINT,
         plate:sequeliz.STRING,
-        desc:sequeliz.STRING
+        desc:sequeliz.STRING,
+        state:sequeliz.INTEGER
 
     });
 }
