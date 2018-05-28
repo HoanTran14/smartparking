@@ -10,7 +10,7 @@ var data = DATABASE();
 //--------------------------------------------------------------------------------------------------------------
 /* GET users listing. */
 router.post("/register", function (req, res, next) {
-    if (!req.body) returnres.sendStatus(400);
+    if (!req.body) return res.sendStatus(400);
 
     data.createUser(req.body, function (user) {
         res.send({code: 1, mes: "Success", data: {user}});
