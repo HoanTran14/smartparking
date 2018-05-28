@@ -67,7 +67,8 @@ function Sequelize() {
                 price: body.price,
                 desc: "",
                 plate: plate,
-                money:0
+                money:0,
+                state:1
             }).then(ticket => {
                 console.log("CREAT TICKET : ", ticket.get({plain: true}));
                 next(ticket);
@@ -83,34 +84,14 @@ function Sequelize() {
 
             {
                 end_at: body.end_at,
-                price: body.time * body.price,
-                dest: body.desc
+                price:  body.price,
+                dest: body.desc,
+                state:0
             },
             {where: {id: body.id}}
         )
-            .then(result => {
-                    next(result);
-                    // tickettable.findOne({
-                    //     where: {
-                    //         id: body.id
-                    //
-                    //     }
-                    // }).then(ticket => {
-                    //     if (ticket == null) {
-                    //         error("Fail!");
-                    //
-                    //     }
-                    //     else {
-                    //         console.log("ticket: ");
-                    //         next(ticket);
-                    //     }
-                    //
-                    // })
-                    //     .catch(err => {
-                    //         console.log("findOne FAIL: ", err.message);
-                    //         error();
-                    //     });
-
+            .then(data => {
+                    next(data);
 
                 }
             )
