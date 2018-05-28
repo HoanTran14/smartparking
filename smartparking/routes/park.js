@@ -9,9 +9,11 @@ router.use(bodyParsers.urlencoded({extended: true}));
 const DATABASE = require('../modules/database');
 const OPENAL = require('../modules/openalpr');
 const FIRE = require('../modules/firebasedatabase');
+const FIREADMIN = require('../modules/firebaseAdmin');
 var fire = FIRE();
 var database = DATABASE();
 var openalr = OPENAL();
+var fireadmin = FIREADMIN();
 
 
 router.post("/info", function (req, res, next) {
@@ -62,8 +64,10 @@ router.post("/sign", function (req, res, next) {
 });
 
 router.post("/license-plate", function (req, res, next) {
+
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);//id,phone,start_at
+
     openalr.callImg(req.body.data,
         function (data) {
             fire.upUrlImg(req.body.id_park, data);

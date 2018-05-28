@@ -28,7 +28,7 @@ router.post("/info", function (req, res, next) {
             res.send({code: 1, mes: "Success", data: {user}});
 
         }, function () {
-            res.send({code: 0, mes: "Fail to login!", data: {}});
+            res.send({code: 0, mes: "Fail !", data: {}});
 
         });
 
@@ -44,7 +44,7 @@ router.post("/wallet/recharge", function (req, res, next) {
             res.send({code: 1, mes: "Success", data: {user}});
 
         }, function () {
-            res.send({code: 0, mes: "Fail to login!", data: {}});
+            res.send({code: 0, mes: "Fail !", data: {}});
 
         });
 
