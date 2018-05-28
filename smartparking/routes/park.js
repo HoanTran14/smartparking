@@ -42,18 +42,21 @@ router.post("/register", function (req, res, next) {
 router.post("/sign", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);//id,phone,start_at
-    openalr.callImg(req.body.data,
-        function (data) {
-            database.createTicket(req.body, data, function (ticket) {
+    fire.getUrlImg(req.body.id_park, function (url) {
+
+        if (url == null) {
+            res.send({code: 0, mes: "Sorry, try again!", data: {}});
+        } else
+
+            database.createTicket(req.body, url, function (ticket) {
                 res.send({code: 1, mes: "Success", data: {ticket}});
             }, function (err) {
                 res.send({code: 0, mes: "Fail", data: {err}});
             })
-        }, function (err) {
 
-            res.send({code: 0, mes: "Fail", data: {err}});
-
-        });
+    }, function (err) {
+        res.send({code: 0, mes: "Fail", data: {err}});
+    });
 
 
 });
@@ -63,11 +66,8 @@ router.post("/license-plate", function (req, res, next) {
     console.log(req.body);//id,phone,start_at
     openalr.callImg(req.body.data,
         function (data) {
-            database.createTicket(req.body, data, function (ticket) {
-                res.send({code: 1, mes: "Success", data: {ticket}});
-            }, function (err) {
-                res.send({code: 0, mes: "Fail", data: {err}});
-            })
+            fire.upUrlImg(req.body.id_park, data);
+            res.send({code: 1, mes: "Success", data: {data}});
         }, function (err) {
 
             res.send({code: 0, mes: "Fail", data: {err}});
@@ -79,11 +79,25 @@ router.post("/license-plate", function (req, res, next) {
 router.post("/out", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
-    database.updateTicket(req.body, function (data) {
-        res.send({code: 1, mes: "Success", data: {data}});
-    }, function (err) {
-        res.send({code: 0, mes: "Fail", data: {err}});
-    });
+    openalr.callImg(req.body.data,
+        function (data) {
+            if (data == req.body.plate) {
+                database.updateTicket(req.body, function (data) {
+                    res.send({code: 1, mes: "Success", data: {data}});
+                }, function (err) {
+                    res.send({code: 0, mes: "Fail", data: {err}});
+                })
+            }
+            else {
+                res.send({code: 0, mes: "Biển số xe ghi nhận " + data + " không đúng với  thông tin vé", data: {}});
+
+            }
+
+        }, function (err) {
+
+            res.send({code: 0, mes: "Fail", data: {err}});
+
+        });
 
 
 });

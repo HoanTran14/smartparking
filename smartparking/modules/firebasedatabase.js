@@ -13,7 +13,7 @@ const config = {
 
 firebasedatabase.initializeApp(config);
 const database = firebasedatabase.database();
-
+const firemess= firebasedatabase.messaging();
 ////-----------------------coment----------------------------------------------------------------------------------------------------------------
 function firebase() {
     function writeParkDataInfo(body) {
@@ -38,7 +38,7 @@ function firebase() {
     }
 
     function getUrlImg(id, next, err) {
-        database.ref('camera/' + id).once('value', function (snapshot) {
+        database.ref('camera/' + id+"/plate").once('value', function (snapshot) {
 
             //logs everything that is under /user
             console.log(snapshot.val());
@@ -46,6 +46,11 @@ function firebase() {
 
 
         });
+    }
+    function upUrlImg(id,data, next, err) {
+
+        database.ref('camera/' +id).update( {plate:data});
+
     }
 
     function getParkInfo(id, next, err) {
@@ -80,6 +85,7 @@ function firebase() {
     }
 
     return {
+        upUrlImg,
         getParkInfo,
         getUrlImg,
         updatePark,
