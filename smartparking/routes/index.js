@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParsers = require('body-parser');
 var router = express.Router();
+const FIRE = require('../modules/firebasedatabase');
 //---------------------------------------------------------------------------------------------------------
 router.use(bodyParsers.json());
 router.use(bodyParsers.urlencoded({extended: true}));
@@ -8,7 +9,7 @@ router.use(bodyParsers.urlencoded({extended: true}));
 
 const DATABASE = require('../modules/database');
 //const OPENALPR = require('../modules/openalpr');
-
+var fire = FIRE();
 var database = DATABASE();
 //var openalr = OPENALPR();
 
@@ -40,8 +41,13 @@ router.post("/login", function (req, res, next) {
                 {firebase_token: req.body.firebase_token},
                 {where: {phone: user.phone}}
             )
-                .then(result =>
-                    res.send({code: 1, mes: "Success", data: {user}})
+                .then(result =>{
+                    fire.getUser(user.phone,function (data) {
+                        res.send({code: 1, mes: "Success", data: {user,data}})
+                    })
+
+                }
+
                 )
                 .catch(err =>
                     res.send({code: 0, mes: "Fail !", data: {err}})

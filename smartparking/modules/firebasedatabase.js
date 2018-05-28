@@ -31,7 +31,22 @@ function firebase() {
 
         });
     }
+    function updateUser(id,key) {
 
+        database.ref('user/state/' + id).update({state:key
+        });
+    }
+    function getUser(id,next) {
+
+        database.ref('user/state/' + id+"/state").once('value', function (snapshot) {
+
+            //logs everything that is under /user
+            console.log(snapshot.val());
+            next(snapshot.val())
+
+
+        });
+    }
     function captureImage(body) {
 
         database.ref('camera' + body.id).update({});
@@ -86,7 +101,8 @@ function firebase() {
 
 
     return {
-
+        getUser,
+        updateUser,
         upUrlImg,
         getParkInfo,
         getUrlImg,
