@@ -14,68 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/database.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="276" column="17" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="17" />
-              <folding>
-                <element signature="n#!!block;n#creat#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/models/User.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="22" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="park.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/park.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="857">
-              <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="firebaseAdmin.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/firebaseAdmin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="firebasedatabase.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="52" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="52" />
-              <folding>
-                <element signature="n#!!block;n#writeParkDataInfo#0;n#!!block;n#firebase#0" />
-                <element signature="n#!!block;n#captureImage#0;n#!!block;n#firebase#0" />
-                <element signature="n#!!block;n#getUrlImg#0;n#!!block;n#firebase#0" />
-                <element signature="n#!!block;n#upUrlImg#0;n#!!block;n#firebase#0" />
-                <element signature="n#!!block;n#getParkInfo#0;n#!!block;n#firebase#0" />
-                <element signature="n#!!block;n#signPark#0;n#!!block;n#firebase#0" />
-                <element signature="n#!!block;n#updatePark#0;n#!!block;n#firebase#0" />
-              </folding>
+            <state relative-caret-position="704">
+              <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -83,17 +26,38 @@
       <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-105">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+            <state relative-caret-position="610">
+              <caret line="56" column="25" lean-forward="true" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ticket.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/models/Ticket.js">
+      <file leaf-file-name="database.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/database.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="3269">
+              <caret line="244" lean-forward="true" selection-start-line="244" selection-end-line="244" />
+              <folding>
+                <element signature="n#!!block;n#creat#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="park.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/park.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="openalpr.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/openalpr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="12" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -117,6 +81,8 @@
       <find>regi</find>
       <find>login</find>
       <find>updae</find>
+      <find>user</find>
+      <find>wallet</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -131,15 +97,15 @@
         <option value="$PROJECT_DIR$/modules/models/Park.js" />
         <option value="$PROJECT_DIR$/modules/models/HistoryUser.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/modules/openalpr.js" />
         <option value="$PROJECT_DIR$/modules/models/Ticket.js" />
-        <option value="$PROJECT_DIR$/modules/database.js" />
         <option value="$PROJECT_DIR$/modules/firebasedatabase.js" />
         <option value="$PROJECT_DIR$/modules/firebaseAdmin.js" />
-        <option value="$PROJECT_DIR$/routes/park.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/modules/models/User.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/modules/database.js" />
+        <option value="$PROJECT_DIR$/routes/park.js" />
+        <option value="$PROJECT_DIR$/modules/openalpr.js" />
       </list>
     </option>
   </component>
@@ -265,7 +231,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62817000" />
+    <option name="totallyTimeSpent" value="69277000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -278,7 +244,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22023182" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32960895" />
@@ -288,7 +253,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32715008" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49947312" weight="0.43093923" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49947312" visible="true" weight="0.23535912" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -323,13 +288,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/database.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -599,13 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/openalpr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -615,43 +566,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/serviceAccountKey.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/firebaseAdmin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/park.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="857">
-          <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="52" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="52" />
-          <folding>
-            <element signature="n#!!block;n#writeParkDataInfo#0;n#!!block;n#firebase#0" />
-            <element signature="n#!!block;n#captureImage#0;n#!!block;n#firebase#0" />
-            <element signature="n#!!block;n#getUrlImg#0;n#!!block;n#firebase#0" />
-            <element signature="n#!!block;n#upUrlImg#0;n#!!block;n#firebase#0" />
-            <element signature="n#!!block;n#getParkInfo#0;n#!!block;n#firebase#0" />
-            <element signature="n#!!block;n#signPark#0;n#!!block;n#firebase#0" />
-            <element signature="n#!!block;n#updatePark#0;n#!!block;n#firebase#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/models/Ticket.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -667,20 +581,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/database.js">
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="276" column="17" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="17" />
+        <state relative-caret-position="381">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/firebasedatabase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
           <folding>
-            <element signature="n#!!block;n#creat#0" />
+            <element signature="n#!!block;n#writeParkDataInfo#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#captureImage#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#getUrlImg#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#upUrlImg#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#getParkInfo#0;n#!!block;n#firebase#0" />
+            <element signature="n#!!block;n#signPark#0;n#!!block;n#firebase#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/bluebird/js/release/util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+        <state relative-caret-position="163">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="56" column="25" lean-forward="true" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/firebaseAdmin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/park.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/openalpr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="12" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3269">
+          <caret line="244" lean-forward="true" selection-start-line="244" selection-end-line="244" />
+          <folding>
+            <element signature="n#!!block;n#creat#0" />
+          </folding>
         </state>
       </provider>
     </entry>

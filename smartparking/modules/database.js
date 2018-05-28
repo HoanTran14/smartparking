@@ -79,7 +79,7 @@ function Sequelize() {
                 });
     }
 
-    function updateTicket(body, next, err) {
+    function updateTicket(body, next, error) {
         tickettable.update(
 
             {
@@ -96,7 +96,7 @@ function Sequelize() {
                 }
             )
             .catch(err =>
-                error(err.message)
+                error(err)
             )
     }
 
@@ -186,7 +186,7 @@ function Sequelize() {
     }
 
     function unrecharge(phone, money, next, error) {
-        console.log("BYID", body)
+
         usertable.findOne({
             where: {
                 phone: phone
@@ -199,10 +199,9 @@ function Sequelize() {
             else {
                 console.log("rechange: " + user.get("wallet"));
 
-                console.log("rechange: " + x);
                 usertable.update(
                     {wallet: (parseInt(user.get("wallet")) - parseInt(money))},
-                    {where: {phone: body.phone}}
+                    {where: {phone: phone}}
                 )
                     .then(result =>
                         next(result)
@@ -216,8 +215,8 @@ function Sequelize() {
 
         })
             .catch(err => {
-                console.log("findOne FAIL: ", err.message);
-                error();
+                console.log("findOne FAIL: ", err);
+                error(err);
             });
     }
 
@@ -279,7 +278,9 @@ function Sequelize() {
         hisparkTable,
         hisuserTable,
         createUser,
-        loginUser
+        loginUser,
+        unrecharge
+
 
     };
 

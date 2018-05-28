@@ -29,7 +29,7 @@ function openAlpr() {
             }
         };
 
-        apiInstance.recognizeBytes(imageBytes, secretKey, country, opts, callback);
+        apiInstance.recognizeUrl(imageBytes, secretKey, country, opts, callback);
 
     }
 
