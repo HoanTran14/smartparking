@@ -80,6 +80,19 @@ router.post("/license-plate", function (req, res, next) {
 
 
 });
+router.post("/ticket/detail", function (req, res, next) {
+
+    if (!req.body) return res.sendStatus(400);
+    console.log(req.body);//id,phone,start_at
+
+    database.findTicketbyid(req.body.id, function (data) {
+        res.send({code: 1, mes: "Success", data: {data}});
+    }, function (err) {
+        res.send({code: 0, mes: "Fail", data: {err}});
+    })
+
+
+});
 router.post("/out", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
@@ -88,17 +101,17 @@ router.post("/out", function (req, res, next) {
             console.log(data);
             if (data == req.body.plate) {
                 console.log(1);
-                database.updateTicket(req.body, function (data) {
+                database.updateTicket(req.body, function (data1) {
 
                     console.log(2);
 
-                    database.unrecharge(req.body.id_user, req.body.price, function (data) {
+                    database.unrecharge(req.body.id_user, req.body.price, req.body.id_ticket, function (data) {
                         console.log(data);
                         database.finduserbyphone(req.body.id_user, function (data) {
+                            console.log(6);
+                            fireadmin.sendmes(data.firebase_token, "Bạn vừa hoàn thành gửi xe " + req.body.plate + " , chi phi: " + req.body.price + "đ", "SmartParking !", function (data) {
 
-                            fireadmin.sendmes(data.firebase_token, "Bạn vừa hoàn thành gửi xe " + req.body.plate + " , chi phi: " + req.body.price+"đ","SmartParking !",function (data) {
-
-                            },function (err) {
+                            }, function (err) {
 
                             });
                             res.send({code: 1, mes: "Success", data: {data}});
@@ -106,7 +119,7 @@ router.post("/out", function (req, res, next) {
                             res.send({code: 0, mes: "Fail", data: {err}});
                         })
 
-
+                        console.log(5);
                     }, function (err) {
                         console.log(4);
                         res.send({code: 0, mes: "Fail", data: {err}});

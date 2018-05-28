@@ -7,15 +7,9 @@ module.exports = function(dbConn, sequeliz) {
             primaryKey: true
 
         },
-        type:sequeliz.STRING,
         id_user:sequeliz.STRING,
-        time: sequeliz.STRING,
-        id_park: sequeliz.INTEGER,
-        park_name: sequeliz.INTEGER,
+        id_ticket:sequeliz.STRING,
         money:sequeliz.STRING,
-        start:sequeliz.STRING,
-        end:sequeliz.STRING,
-        price: sequeliz.BIGINT,
         desc: sequeliz.STRING
 
     });

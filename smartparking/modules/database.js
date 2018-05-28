@@ -56,9 +56,22 @@ function Sequelize() {
                 });
     }
 
+    function findAllhis(id_user, res) {
+        hisusertable.findAll({
+
+            where: {
+                id_user: id_user
+            }
+        }).then(arr => res.send({code: 1, mes: "Success", data: {list: arr}}))
+            .catch(err => {
+
+                res.send({code: 0, mes: "Fail to get data!", data: err.message});
+            })
+    }
+
     function createTicket(body, plate, next, errs) {
 
-        console.log("CREAT USER  FAIL: ", body),
+        console.log("CREAT USER  FAIL: ", body);
             tickettable.create({
                 id_user: body.phone,
                 id_park: body.id_park,
@@ -67,8 +80,8 @@ function Sequelize() {
                 price: body.price,
                 desc: "",
                 plate: plate,
-                money:0,
-                state:1
+                money: 0,
+                state: 1
             }).then(ticket => {
                 console.log("CREAT TICKET : ", ticket.get({plain: true}));
                 next(ticket);
@@ -79,16 +92,31 @@ function Sequelize() {
                 });
     }
 
+    function createHisUser(id_user, id_ticket, money, desc, next, errs) {
+        hisusertable.create({
+                id_user: id_user,
+                id_ticket: id_ticket,
+                desc: desc,
+                money: money
+            }).then(his => {
+                console.log("CREAT TICKET : ", his.get({plain: true}));
+                next(his);
+            })
+                .catch(err => {
+                    console.log("CREAT TICKET  FAIL: ", err.message),
+                        errs(err.message);
+                });
+    }
+
     function updateTicket(body, next, error) {
         tickettable.update(
-
             {
                 end_at: body.end_at,
-                price:  body.price,
+                price: body.price,
                 dest: body.desc,
-                state:0
+                state: 0
             },
-            {where: {id: body.id}}
+            {where: {id: body.id_ticket}}
         )
             .then(data => {
                     next(data);
@@ -109,15 +137,12 @@ function Sequelize() {
     }
 
     function parkTable() {
-        return parkTable();
+        return parktable;
     }
 
-    function hisparkTable() {
-        return userTable();
-    }
 
     function hisuserTable() {
-        return hisparkTable();
+        return hisusertable;
     }
 
 
@@ -168,14 +193,18 @@ function Sequelize() {
                     {wallet: (parseInt(user.get("wallet")) + parseInt(body.money))},
                     {where: {phone: body.phone}}
                 )
-                    .then(result =>
-                        next(result)
+                    .then(result => {
+                            createHisUser(body.phone, null, body.money, "recharge", function (data) {
+
+                            }, function (err) {
+
+                            });
+                            next(result)
+                        }
                     )
                     .catch(err =>
                         error(err.message)
                     )
-
-
             }
 
         })
@@ -185,7 +214,7 @@ function Sequelize() {
             });
     }
 
-    function unrecharge(phone, money, next, error) {
+    function unrecharge(phone, money, id_ticker, next, error) {
 
         usertable.findOne({
             where: {
@@ -194,7 +223,6 @@ function Sequelize() {
         }).then(user => {
             if (user == null) {
                 error("Fail!");
-
             }
             else {
                 console.log("rechange: " + user.get("wallet"));
@@ -203,11 +231,18 @@ function Sequelize() {
                     {wallet: (parseInt(user.get("wallet")) - parseInt(money))},
                     {where: {phone: phone}}
                 )
-                    .then(result =>
-                        next(result)
+                    .then(result => {
+                            createHisUser(phone, id_ticker, money, "deduction\n", function (data) {
+                                console.log("THANH CONG");
+                            }, function (err) {
+                                console.log("THAT BAI ", err);
+                            });
+                            next(result);
+                        }
                     )
-                    .catch(err =>
-                        error(err.message)
+                    .catch(err =>{
+                        console.log("546545645645645645645645654 "+err);
+                        error(err)}
                     )
 
 
@@ -242,7 +277,28 @@ function Sequelize() {
                 error();
             });
     }
+    function findTicketbyid(id, next, error) {
 
+        tickettable.findOne({
+            where: {
+                id: id
+            }
+        }).then(ticket => {
+            if (ticket == null) {
+                error("Fail!");
+
+            }
+            else {
+                console.log("LOGIN: ");
+                next(ticket);
+            }
+
+        })
+            .catch(err => {
+                console.log("findOne FAIL: ", err.message);
+                error();
+            });
+    }
     function findParkbyphone(id, next, error) {
 
         parkTable().findOne({
@@ -267,6 +323,8 @@ function Sequelize() {
     }
 
     return {
+        findTicketbyid,
+        findAllhis,
         updateTicket,
         createTicket,
         findParkbyphone,
@@ -275,7 +333,6 @@ function Sequelize() {
         Ops,
         userTable,
         parkTable,
-        hisparkTable,
         hisuserTable,
         createUser,
         loginUser,

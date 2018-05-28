@@ -65,6 +65,13 @@ router.post("/wallet", function (req, res, next) {
 
 
 });
+router.post("/wallet/history", function (req, res, next) {
+    if (!req.body) return res.sendStatus(400);
+    console.log(req.body);
+    data.findAllhis(req.body.id_user, res);
+
+
+});
 router.post("/search", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
