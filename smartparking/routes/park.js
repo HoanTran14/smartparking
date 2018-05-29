@@ -59,7 +59,7 @@ router.post("/sign", function (req, res, next) {
                     fire.getParkInfo(req.body.id_park, function (data) {
                         if ((parseInt(data.capacity) - parseInt(data.used)) > 0) {
 
-                            fire.updatePark(data.id,parseInt(data.used)+1);
+                            fire.updatePark(data.id, parseInt(data.used) + 1);
 
                             database.createTicket(req.body, url, function (ticket) {
                                 fire.updateUser(req.body.phone, ticket.id);
@@ -81,7 +81,6 @@ router.post("/sign", function (req, res, next) {
                     }, function (err) {
 
                     })
-
 
 
                 }
@@ -137,91 +136,93 @@ router.post("/out", function (req, res, next) {
     openalr.callImg(req.body.data,
         function (data) {
             console.log(data);
-            if (data == req.body.plate) {
-                console.log(1);
-                database.updateTicket(req.body, function (data1) {
+            database.finduserbyphone(req.body.id_user, function (userdata) {
 
-                    console.log(2);
 
-                    database.unrecharge(req.body.id_user, req.body.price, req.body.id_ticket, function (data) {
-                        console.log(data);
-                        database.finduserbyphone(req.body.id_user, function (data) {
+
+                if (data == req.body.plate) {
+                    console.log(1);
+                    database.updateTicket(req.body, function (data1) {
+
+                        console.log(2);
+
+                        database.unrecharge(req.body.id_user, req.body.price, req.body.id_ticket, function (data) {
+
+
                             console.log(6);
                             fire.updateUser(req.body.id_user, -1);
-                            fireadmin.sendmes(data.firebase_token, "Bạn vừa hoàn thành gửi xe " + req.body.plate + " , chi phi: " + req.body.price + "đ", "SmartParking !","1", function (data) {
+                            fireadmin.sendmes(userdata.firebase_token, "Bạn vừa hoàn thành gửi xe " + req.body.plate + " , chi phi: " + req.body.price + "đ", "SmartParking !", "1", function (data) {
 
                             }, function (err) {
 
                             });
 
                             fire.getParkInfo(req.body.id_park, function (data) {
-                                if (( parseInt(data.used)) > 0) {
-                                    fire.updatePark(data.id,parseInt(data.used)-1);
-}
+                                if ((parseInt(data.used)) > 0) {
+                                    fire.updatePark(data.id, parseInt(data.used) - 1);
+                                }
                             }, function (err) {
 
                             })
-
-
 
 
                             res.send({code: 1, mes: "Thành công", data: {data}});
+
+
+                            console.log(5);
                         }, function (err) {
-                            fireadmin.sendmes(data.firebase_token, "Thông tin vé không chính xác, vi lòng thử lại", function (data) {
+                            console.log(4);
+                            fireadmin.sendmes(userdata.firebase_token, "Thông tin vé không hợp lệ, vui lòng thử lại!", "Cảnh báo", "0", function (data) {
 
                             }, function (err) {
 
-                            })
+                            });
                             res.send({code: 0, mes: "Không thành công", data: {err}});
-                        })
+                        });
 
-                        console.log(5);
+
                     }, function (err) {
-                        console.log(4);
-                        fireadmin.sendmes(data.firebase_token, "Thông tin vé không chính xác, vi lòng thử lại", function (data) {
+                        console.log(5);
+
+
+                        fireadmin.sendmes(userdata.firebase_token, "Thông tin vé không hợp lệ, vui lòng thử lại!", "Cảnh báo", "0", function (data) {
+
+                        }, function (err) {
+
+                        });
+                        res.send({code: 0, mes: "Không thành công", data: {err}});
+                    });
+
+                }
+                else {
+
+
+                        fireadmin.sendmes(userdata.firebase_token, "Biển số xe ghi nhận " + data + " không đúng với  thông tin vé", "Cảnh báo", "0", function (data) {
 
                         }, function (err) {
 
                         })
-                        res.send({code: 0, mes: "Không thành công", data: {err}});
-                    });
+                    res.send({code: 0, mes: "Biển số xe ghi nhận " + data + " không đúng với  thông tin vé", data: {}});
+
+                }
 
 
-                }, function (err) {
-                    console.log(5);
-                    fireadmin.sendmes(data.firebase_token, "Thông tin vé không chính xác, vi lòng thử lại", function (data) {
-
-                    }, function (err) {
-
-                    })
-                    res.send({code: 0, mes: "Không thành công", data: {err}});
-                });
-
-            }
-            else {
-                database.finduserbyphone(req.body.id_user, function (data) {
-
-                    fireadmin.sendmes(data.firebase_token, "Biển số xe ghi nhận " + data + " không đúng với  thông tin vé", "Cảnh báo", "0", function (data) {
-
-                    }, function (err) {
-
-                    })
 
 
-                }, function (err) {
 
-                })
 
-                res.send({code: 0, mes: "Biển số xe ghi nhận " + data + " không đúng với  thông tin vé", data: {}});
 
-            }
 
-        }, function (err) {
-            fireadmin.sendmes(data.firebase_token, "Thông tin vé không chính xác, vi lòng thử lại", function (data) {
+
+
 
             }, function (err) {
-
+                res.send({code: 0, mes: "Không thành công", data: {err}});
             });
+
+
+        }, function (err) {
+
             res.send({code: 0, mes: "Không thành công", data: {err}});
 
         });
