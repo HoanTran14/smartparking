@@ -9,13 +9,13 @@ admin.initializeApp({
 
 
 function firebaseAdmin() {
-    function sendmes(token, mes, title, next, err) {
+    function sendmes(token, mes, title,key, next, err) {
 
         console.log("1312312312 :  " + token)
 // See documentation on defining a message payload.
         var message = {
             data: {
-                myKey1: "hello fr"
+                myKey1: key
             },
             notification: {
                 title: title,
