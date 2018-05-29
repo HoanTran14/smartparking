@@ -21,10 +21,10 @@ router.post("/info", function (req, res, next) {
     console.log(req.body);
     fire.getParkInfo(req.body.id, function (park) {
 
-        res.send({code: 1, mes: "Success", data: {park}});
+        res.send({code: 1, mes: "Thành công", data: {park}});
 
     }, function () {
-        res.send({code: 0, mes: "Fail to login!", data: {}});
+        res.send({code: 0, mes: "Không thành công !", data: {}});
 
     })
 
@@ -44,21 +44,36 @@ router.post("/register", function (req, res, next) {
 router.post("/sign", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);//id,phone,start_at
-    fire.getUrlImg(req.body.id_park, function (url) {
 
-        if (url == null) {
-            res.send({code: 0, mes: "Sorry, try again!", data: {}});
-        } else
-            fire.updateUser(req.body.phone,1);
-            database.createTicket(req.body, url, function (ticket) {
-                res.send({code: 1, mes: "Success", data: {ticket}});
+    database.finduserbyphone(req.body.phone, function (data) {
+
+
+        if (parseInt(data.wallet) > 0) {
+
+            fire.getUrlImg(req.body.id_park, function (url) {
+
+                if (url == null) {
+                    res.send({code: 0, mes: "Vui lòng  thử lại sau!", data: {}});
+                } else
+                    fire.updateUser(req.body.phone, 1);
+                database.createTicket(req.body, url, function (ticket) {
+                    res.send({code: 1, mes: "Thành công", data: {ticket}});
+                }, function (err) {
+                    res.send({code: 0, mes: "Không thành công", data: {err}});
+                })
+
             }, function (err) {
-                res.send({code: 0, mes: "Fail", data: {err}});
-            })
+                res.send({code: 0, mes: "Không thành công", data: {err}});
+            });
+        } else {
+            res.send({code: 0, mes: "Bạn không đủ tiền thực hiện yêu cầu!", data: {}});
+        }
+
+
 
     }, function (err) {
-        res.send({code: 0, mes: "Fail", data: {err}});
-    });
+        res.send({code: 0, mes: "Không thành công", data: {err}});
+    })
 
 
 });
@@ -71,10 +86,10 @@ router.post("/license-plate", function (req, res, next) {
     openalr.callImg(req.body.data,
         function (data) {
             fire.upUrlImg(req.body.id_park, data);
-            res.send({code: 1, mes: "Success", data: {data}});
+            res.send({code: 1, mes: "Thành công ", data: {data}});
         }, function (err) {
 
-            res.send({code: 0, mes: "Fail", data: {err}});
+            res.send({code: 0, mes: "Không thành công", data: {err}});
 
         });
 
@@ -86,9 +101,9 @@ router.post("/ticket/detail", function (req, res, next) {
     console.log(req.body);//id,phone,start_at
 
     database.findTicketbyid(req.body.id, function (data) {
-        res.send({code: 1, mes: "Success", data: {data}});
+        res.send({code: 1, mes: "Thành công", data: {data}});
     }, function (err) {
-        res.send({code: 0, mes: "Fail", data: {err}});
+        res.send({code: 0, mes: "Không thành công", data: {err}});
     })
 
 
@@ -109,27 +124,27 @@ router.post("/out", function (req, res, next) {
                         console.log(data);
                         database.finduserbyphone(req.body.id_user, function (data) {
                             console.log(6);
-                            fire.updateUser(req.body.id_user,0);
+                            fire.updateUser(req.body.id_user, 0);
                             fireadmin.sendmes(data.firebase_token, "Bạn vừa hoàn thành gửi xe " + req.body.plate + " , chi phi: " + req.body.price + "đ", "SmartParking !", function (data) {
 
                             }, function (err) {
 
                             });
-                            res.send({code: 1, mes: "Success", data: {data}});
+                            res.send({code: 1, mes: "Thành công", data: {data}});
                         }, function (err) {
-                            res.send({code: 0, mes: "Fail", data: {err}});
+                            res.send({code: 0, mes: "Không thành công", data: {err}});
                         })
 
                         console.log(5);
                     }, function (err) {
                         console.log(4);
-                        res.send({code: 0, mes: "Fail", data: {err}});
+                        res.send({code: 0, mes: "Không thành công", data: {err}});
                     });
 
 
                 }, function (err) {
                     console.log(5);
-                    res.send({code: 0, mes: "Fail", data: {err}});
+                    res.send({code: 0, mes: "Không thành công", data: {err}});
                 });
 
             }
@@ -153,7 +168,7 @@ router.post("/out", function (req, res, next) {
 
         }, function (err) {
 
-            res.send({code: 0, mes: "Fail", data: {err}});
+            res.send({code: 0, mes: "Không thành công", data: {err}});
 
         });
 

@@ -19,7 +19,7 @@ router.get('/', function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);
   //  openalr.identify(1,"http://thamtutatthang.com/uploads/images/tham-tu-dieu-tra-bien-so-xe(1).jpg")
-    res.send({code: 1, mes: "Success ", data: {}});
+    res.send({code: 1, mes: "Thành công ", data: {}});
 
 });
 //delete table
@@ -43,14 +43,14 @@ router.post("/login", function (req, res, next) {
             )
                 .then(result =>{
                     fire.getUser(user.phone,function (data) {
-                        res.send({code: 1, mes: "Success", data: {user,data}})
+                        res.send({code: 1, mes: "Thành công", data: {user,data}})
                     })
 
                 }
 
                 )
                 .catch(err =>
-                    res.send({code: 0, mes: "Fail !", data: {err}})
+                    res.send({code: 0, mes: "Không thành công !", data: {err}})
                 )
 
 

@@ -62,7 +62,7 @@ function Sequelize() {
             where: {
                 id_user: id_user
             }
-        }).then(arr => res.send({code: 1, mes: "Success", data: {list: arr}}))
+        }).then(arr => res.send({code: 1, mes: "Thành công", data: {list: arr}}))
             .catch(err => {
 
                 res.send({code: 0, mes: "Fail to get data!", data: err.message});
@@ -160,7 +160,7 @@ function Sequelize() {
             }
         }).then(user => {
             if (user == null) {
-                error("Fail!");
+                error("Không thành công!");
 
             }
             else {
@@ -183,7 +183,7 @@ function Sequelize() {
             }
         }).then(user => {
             if (user == null) {
-                error("Fail!");
+                error("Không thành công!");
 
             }
             else {
@@ -222,7 +222,7 @@ function Sequelize() {
             }
         }).then(user => {
             if (user == null) {
-                error("Fail!");
+                error("Không thành công!");
             }
             else {
                 console.log("rechange: " + user.get("wallet"));
@@ -263,7 +263,7 @@ function Sequelize() {
             }
         }).then(user => {
             if (user == null) {
-                error("Fail!");
+                error("Không thành công!");
 
             }
             else {
@@ -285,7 +285,7 @@ function Sequelize() {
             }
         }).then(ticket => {
             if (ticket == null) {
-                error("Fail!");
+                error("Không thành công!");
 
             }
             else {
@@ -307,7 +307,7 @@ function Sequelize() {
             }
         }).then(park => {
             if (park == null) {
-                error("Fail!");
+                error("Không thành công!");
 
             }
             else {

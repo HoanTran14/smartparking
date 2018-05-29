@@ -13,7 +13,7 @@ router.post("/register", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
 
     data.createUser(req.body, function (user) {
-        res.send({code: 1, mes: "Success", data: {user}});
+        res.send({code: 1, mes: "Thành công", data: {user}});
     }, function (err) {
         res.send({code: 1, mes: err, data: {}});
     })
@@ -25,10 +25,10 @@ router.post("/info", function (req, res, next) {
     data.finduserbyphone(req.body.phone,
         function (user) {
 
-            res.send({code: 1, mes: "Success", data: {user}});
+            res.send({code: 1, mes: "Thành công", data: {user}});
 
         }, function () {
-            res.send({code: 0, mes: "Fail !", data: {}});
+            res.send({code: 0, mes: "Không thành công !", data: {}});
 
         });
 
@@ -41,10 +41,10 @@ router.post("/wallet/recharge", function (req, res, next) {
     data.recharge(req.body,
         function (user) {
 
-            res.send({code: 1, mes: "Success", data: {user}});
+            res.send({code: 1, mes: "Thành công", data: {user}});
 
         }, function () {
-            res.send({code: 0, mes: "Fail !", data: {}});
+            res.send({code: 0, mes: "Không thành công !", data: {}});
 
         });
 
@@ -56,10 +56,10 @@ router.post("/wallet", function (req, res, next) {
     data.finduserbyphone(req.body.phone,
         function (user) {
             var wallet = user.get("wallet");
-            res.send({code: 1, mes: "Success", data: {wallet}});
+            res.send({code: 1, mes: "Thành công", data: {wallet}});
 
         }, function () {
-            res.send({code: 0, mes: "Fail!", data: {}});
+            res.send({code: 0, mes: "Không thành công!", data: {}});
 
         });
 
@@ -84,7 +84,7 @@ router.post("/search", function (req, res, next) {
                 [(data.Ops()).like]: name
             }
         }
-    }).then(arr => res.send({code: 1, mes: "Success", data: {list: arr}}))
+    }).then(arr => res.send({code: 1, mes: "Thành công", data: {list: arr}}))
         .catch(err => {
 
             res.send({code: 0, mes: "Fail to get data!", data: err.message});
@@ -104,10 +104,10 @@ router.post("/delete", function (req, res, next) {
     }).then(a => {
 
         if (a == 0) {
-            res.send({code: 0, mes: "Fail!", data: {}})
+            res.send({code: 0, mes: "Không thành công!", data: {}})
         } else
-            res.send({code: 1, mes: "Success!", data: {}});
+            res.send({code: 1, mes: "Thành công!", data: {}});
 
-    }).catch(a => res.send({code: 0, mes: "Fail!", data: {}}));
+    }).catch(a => res.send({code: 0, mes: "Không thành công!", data: {}}));
 });
 module.exports = router;
