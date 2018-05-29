@@ -31,14 +31,17 @@ function firebase() {
 
         });
     }
-    function updateUser(id,key) {
 
-        database.ref('user/state/' + id).update({state:key
+    function updateUser(id, key) {
+
+        database.ref('user/state/' + id).update({
+            state: key
         });
     }
-    function getUser(id,next) {
 
-        database.ref('user/state/' + id+"/state").once('value', function (snapshot) {
+    function getUser(id, next) {
+
+        database.ref('user/state/' + id + "/state").once('value', function (snapshot) {
 
             //logs everything that is under /user
             console.log(snapshot.val());
@@ -47,13 +50,14 @@ function firebase() {
 
         });
     }
+
     function captureImage(body) {
 
         database.ref('camera' + body.id).update({});
     }
 
     function getUrlImg(id, next, err) {
-        database.ref('camera/' + id+"/plate").once('value', function (snapshot) {
+        database.ref('camera/' + id + "/plate").once('value', function (snapshot) {
 
             //logs everything that is under /user
             console.log(snapshot.val());
@@ -63,9 +67,9 @@ function firebase() {
         });
     }
 
-    function upUrlImg(id,data, next, err) {
+    function upUrlImg(id, data, next, err) {
 
-        database.ref('camera/' +id).update( {plate:data});
+        database.ref('camera/' + id).update({plate: data});
 
     }
 
@@ -89,12 +93,10 @@ function firebase() {
 
     }
 
-    function updatePark(body) {
-        console.log("FIRE" + body);
-        database.ref('park/' + body.id).update({
-            capacity: body.capacity,
-            used: body.used,
-            space: body.space
+    function updatePark(id,  used) {
+        database.ref('park/' + id).update({
+            used: used
+
         });
 
     }

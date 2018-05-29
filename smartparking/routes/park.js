@@ -45,7 +45,6 @@ router.post("/sign", function (req, res, next) {
     if (!req.body) return res.sendStatus(400);
     console.log(req.body);//id,phone,start_at
 
-
     database.finduserbyphone(req.body.phone, function (data) {
 
 
@@ -56,15 +55,37 @@ router.post("/sign", function (req, res, next) {
 
                 if (url == null) {
                     res.send({code: 0, mes: "Sorry, try again!", data: {}});
-                } else
+                } else {
+                    fire.getParkInfo(req.body.id_park, function (data) {
+                        if ((parseInt(data.capacity) - parseInt(data.used)) > 0) {
 
-                    database.createTicket(req.body, url, function (ticket) {
-                        fire.updateUser(req.body.phone, ticket.id);
-                        res.send({code: 1, mes: "Success", data: {ticket}});
+                            fire.updatePark(data.id,parseInt(data.used)+1);
 
+                            database.createTicket(req.body, url, function (ticket) {
+                                fire.updateUser(req.body.phone, ticket.id);
+
+                                res.send({code: 1, mes: "Success", data: {ticket}});
+
+                            }, function (err) {
+                                res.send({code: 0, mes: "Không thành công", data: {err}});
+                            });
+
+
+                        } else {
+                            res.send({
+                                code: 0,
+                                mes: "Bãi xe hết chỗ vui lòng quay lại sau, xin chân thành cảm ơn!",
+                                data: {}
+                            });
+                        }
                     }, function (err) {
-                        res.send({code: 0, mes: "Không thành công", data: {err}});
-                    });
+
+                    })
+
+
+
+                }
+
             });
         }
 
@@ -127,6 +148,30 @@ router.post("/out", function (req, res, next) {
                         database.finduserbyphone(req.body.id_user, function (data) {
                             console.log(6);
                             fire.updateUser(req.body.id_user, -1);
+
+
+                            fire.getParkInfo(req.body.id_park, function (data) {
+                                if (( parseInt(data.used)+1) > 0) {
+                                    fire.updatePark(data.id,parseInt(data.used)-1);
+}
+                            }, function (err) {
+
+                            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                             fireadmin.sendmes(data.firebase_token, "Bạn vừa hoàn thành gửi xe " + req.body.plate + " , chi phi: " + req.body.price + "đ", "SmartParking !", function (data) {
 
