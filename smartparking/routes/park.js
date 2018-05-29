@@ -167,18 +167,33 @@ router.post("/out", function (req, res, next) {
 
                             res.send({code: 1, mes: "Thành công", data: {data}});
                         }, function (err) {
+                            fireadmin.sendmes(data.firebase_token, "Thông tin vé không chính xác, vi lòng thử lại", function (data) {
+
+                            }, function (err) {
+
+                            })
                             res.send({code: 0, mes: "Không thành công", data: {err}});
                         })
 
                         console.log(5);
                     }, function (err) {
                         console.log(4);
+                        fireadmin.sendmes(data.firebase_token, "Thông tin vé không chính xác, vi lòng thử lại", function (data) {
+
+                        }, function (err) {
+
+                        })
                         res.send({code: 0, mes: "Không thành công", data: {err}});
                     });
 
 
                 }, function (err) {
                     console.log(5);
+                    fireadmin.sendmes(data.firebase_token, "Thông tin vé không chính xác, vi lòng thử lại", function (data) {
+
+                    }, function (err) {
+
+                    })
                     res.send({code: 0, mes: "Không thành công", data: {err}});
                 });
 
@@ -186,7 +201,7 @@ router.post("/out", function (req, res, next) {
             else {
                 database.finduserbyphone(req.body.id_user, function (data) {
 
-                    fireadmin.sendmes(data.firebase_token, "Biển số xe ghi nhận " + data + " không đúng với  thông tin vé", "Cảnh báo","0", function (data) {
+                    fireadmin.sendmes(data.firebase_token, "Biển số xe ghi nhận " + data + " không đúng với  thông tin vé", "Cảnh báo", "0", function (data) {
 
                     }, function (err) {
 
@@ -202,7 +217,11 @@ router.post("/out", function (req, res, next) {
             }
 
         }, function (err) {
+            fireadmin.sendmes(data.firebase_token, "Thông tin vé không chính xác, vi lòng thử lại", function (data) {
 
+            }, function (err) {
+
+            });
             res.send({code: 0, mes: "Không thành công", data: {err}});
 
         });
