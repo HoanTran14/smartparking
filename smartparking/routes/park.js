@@ -37,7 +37,7 @@ router.post("/register", function (req, res, next) {
     console.log(req.body);
     fire.writeParkDataInfo(req.body);
 
-
+    res.sendStatus(200);
 });
 
 
@@ -148,14 +148,14 @@ router.post("/out", function (req, res, next) {
                         database.finduserbyphone(req.body.id_user, function (data) {
                             console.log(6);
                             fire.updateUser(req.body.id_user, -1);
-                            fireadmin.sendmes(data.firebase_token, "Bạn vừa hoàn thành gửi xe " + req.body.plate + " , chi phi: " + req.body.price + "đ", "SmartParking !",1, function (data) {
+                            fireadmin.sendmes(data.firebase_token, "Bạn vừa hoàn thành gửi xe " + req.body.plate + " , chi phi: " + req.body.price + "đ", "SmartParking !","1", function (data) {
 
                             }, function (err) {
 
                             });
 
                             fire.getParkInfo(req.body.id_park, function (data) {
-                                if (( parseInt(data.used)+1) > 0) {
+                                if (( parseInt(data.used)) > 0) {
                                     fire.updatePark(data.id,parseInt(data.used)-1);
 }
                             }, function (err) {
@@ -186,7 +186,7 @@ router.post("/out", function (req, res, next) {
             else {
                 database.finduserbyphone(req.body.id_user, function (data) {
 
-                    fireadmin.sendmes(data.firebase_token, "Biển số xe ghi nhận " + data + " không đúng với  thông tin vé", "Cảnh báo",0, function (data) {
+                    fireadmin.sendmes(data.firebase_token, "Biển số xe ghi nhận " + data + " không đúng với  thông tin vé", "Cảnh báo","0", function (data) {
 
                     }, function (err) {
 

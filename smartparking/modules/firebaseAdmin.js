@@ -15,7 +15,7 @@ function firebaseAdmin() {
 // See documentation on defining a message payload.
         var message = {
             data: {
-                myKey1: key
+                MyKey1: key
             },
             notification: {
                 title: title,
